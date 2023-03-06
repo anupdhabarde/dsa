@@ -28,7 +28,10 @@ Constraints:
 
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        """"""
+        """
+        Time Complexity: O(nlogn)
+        Space Complexity: O(1)
+        """
         lower_bound = 0
         upper_bound = len(nums) - 1
         while lower_bound <= upper_bound:
@@ -47,5 +50,4 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    index = solution.search([-1, 0, 3, 5, 9, 12], 12)
-    print(index)
+    assert solution.search([-1, 0, 3, 5, 9, 12], 9) == 4
