@@ -66,6 +66,7 @@ class Solution:
     def recursive(self, n: int) -> int:
         """
         Recursive Solution
+
         Time Complexity: O(2^n)
         Space Complexity: O(n)
         """
@@ -78,6 +79,7 @@ class Solution:
     def recursive_cached(self, n: int) -> int:
         """
         Recursive Solution (Cached)
+
         Time Complexity: O(n)
         Space Complexity: O(n)
         """
@@ -87,6 +89,12 @@ class Solution:
         return self.recursive_cached(n - 1) + self.recursive_cached(n - 2)
 
     def recursive_list_cache(self, n: int, notebook=None) -> int:
+        """
+        Recursive Solution (Dynamic Programming)
+
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        """
         if notebook is None:
             notebook = [None] * (n + 1)
 
