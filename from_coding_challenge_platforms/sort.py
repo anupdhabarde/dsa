@@ -38,7 +38,16 @@ class Solution:
         Time Complexity: O(nlogn)
         Space Complexity: O(n)
         """
-        return nums
+        nums_length = len(nums)
+
+        if nums_length <= 1:
+            return nums
+
+        center = nums_length // 2
+
+        return self.combine_sorted_lists(
+            self.merge_sort(nums[:center]), self.merge_sort(nums[center:])
+        )
 
     def combine_sorted_lists(
         self, left_list: list[int], right_list: list[int]
@@ -49,7 +58,7 @@ class Solution:
         left_list_length = len(left_list)
         right_list_length = len(right_list)
 
-        for _ in range(left_list_length + right_list_length):
+        while left_pointer < left_list_length and right_pointer < right_list_length:
             if left_list[left_pointer] < right_list[right_pointer]:
                 combined_list.append(left_list[left_pointer])
                 left_pointer += 1
@@ -57,14 +66,7 @@ class Solution:
                 combined_list.append(right_list[right_pointer])
                 right_pointer += 1
 
-            if left_pointer >= left_list_length:
-                combined_list.extend(right_list[right_pointer:])
-                break
-            if right_pointer >= right_list_length:
-                combined_list.extend(left_list[left_pointer:])
-                break
-
-        return combined_list
+        return combined_list + left_list[left_pointer:] + right_list[right_pointer:]
 
 
 if __name__ == "__main__":
@@ -86,6 +88,7 @@ if __name__ == "__main__":
         9,
         10,
     ]
+
     assert solution.selection_sort([10, 2, 4, 1, 8, 5, 6]) == [1, 2, 4, 5, 6, 8, 10]
     assert solution.selection_sort([]) == []
     assert solution.selection_sort([1]) == [1]
@@ -104,8 +107,20 @@ if __name__ == "__main__":
         10,
     ]
 
-    # print(
-    #     solution.combine_sorted_lists(
-    #         [1, 2, 4, 5, 8, 15], [3, 6, 9, 10, 16, 21, 22, 100, 105]
-    #     )
-    # )
+    assert solution.merge_sort([10, 2, 4, 1, 8, 5, 6]) == [1, 2, 4, 5, 6, 8, 10]
+    assert solution.merge_sort([]) == []
+    assert solution.merge_sort([1]) == [1]
+    assert solution.merge_sort([2, 1]) == [1, 2]
+    assert solution.merge_sort([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+    ]
