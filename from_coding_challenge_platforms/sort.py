@@ -33,6 +33,39 @@ class Solution:
 
         return nums
 
+    def merge_sort(self, nums: list[int]) -> list[int]:
+        """
+        Time Complexity: O(nlogn)
+        Space Complexity: O(n)
+        """
+        return nums
+
+    def combine_sorted_lists(
+        self, left_list: list[int], right_list: list[int]
+    ) -> list[int]:
+        """ """
+        combined_list = []
+        left_pointer = right_pointer = 0
+        left_list_length = len(left_list)
+        right_list_length = len(right_list)
+
+        for _ in range(left_list_length + right_list_length):
+            if left_list[left_pointer] < right_list[right_pointer]:
+                combined_list.append(left_list[left_pointer])
+                left_pointer += 1
+            else:
+                combined_list.append(right_list[right_pointer])
+                right_pointer += 1
+
+            if left_pointer >= left_list_length:
+                combined_list.extend(right_list[right_pointer:])
+                break
+            if right_pointer >= right_list_length:
+                combined_list.extend(left_list[left_pointer:])
+                break
+
+        return combined_list
+
 
 if __name__ == "__main__":
     solution = Solution()
@@ -70,3 +103,9 @@ if __name__ == "__main__":
         9,
         10,
     ]
+
+    # print(
+    #     solution.combine_sorted_lists(
+    #         [1, 2, 4, 5, 8, 15], [3, 6, 9, 10, 16, 21, 22, 100, 105]
+    #     )
+    # )
