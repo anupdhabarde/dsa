@@ -38,26 +38,6 @@ class Solution:
         Time Complexity: O(nlogn)
         Space Complexity: O(n)
         """
-
-        def combine_sorted_lists(
-            left_list: list[int], right_list: list[int]
-        ) -> list[int]:
-            """ """
-            combined_list = []
-            left_pointer = right_pointer = 0
-            left_list_length = len(left_list)
-            right_list_length = len(right_list)
-
-            while left_pointer < left_list_length and right_pointer < right_list_length:
-                if left_list[left_pointer] < right_list[right_pointer]:
-                    combined_list.append(left_list[left_pointer])
-                    left_pointer += 1
-                else:
-                    combined_list.append(right_list[right_pointer])
-                    right_pointer += 1
-
-            return combined_list + left_list[left_pointer:] + right_list[right_pointer:]
-
         nums_length = len(nums)
 
         if nums_length <= 1:
@@ -65,9 +45,28 @@ class Solution:
 
         center = nums_length // 2
 
-        return combine_sorted_lists(
+        return self.combine_sorted_lists(
             self.merge_sort(nums[:center]), self.merge_sort(nums[center:])
         )
+
+    def combine_sorted_lists(
+        self, left_list: list[int], right_list: list[int]
+    ) -> list[int]:
+        """ """
+        combined_list = []
+        left_pointer = right_pointer = 0
+        left_list_length = len(left_list)
+        right_list_length = len(right_list)
+
+        while left_pointer < left_list_length and right_pointer < right_list_length:
+            if left_list[left_pointer] < right_list[right_pointer]:
+                combined_list.append(left_list[left_pointer])
+                left_pointer += 1
+            else:
+                combined_list.append(right_list[right_pointer])
+                right_pointer += 1
+
+        return combined_list + left_list[left_pointer:] + right_list[right_pointer:]
 
 
 if __name__ == "__main__":
