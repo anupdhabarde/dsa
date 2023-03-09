@@ -31,6 +31,4 @@ if __name__ == "__main__":
     assert solution.is_palindrome("a") is True
     assert solution.is_palindrome("madam") is True
     assert solution.is_palindrome("adam") is False
-    assert (
-        solution.is_palindrome("saippuakivikauppias") is True
-    )  # BTW, this means "Caustic Soda".
+    assert solution.is_palindrome("tattarrattat") is True
