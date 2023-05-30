@@ -36,21 +36,19 @@ class Solution:
             reverse_index = -(index + 1)
             s[index], s[reverse_index] = s[reverse_index], s[index]
 
-    def reverse_string_recursive(self, s: List[str | int], start=0, end=None) -> None:
+    def reverse_string_recursive(self, s: List[str | int], start=0) -> None:
         """
         Do not return anything, modify s in-place instead.
 
         TC: O(n)
         SC: O(1)
         """
-        if end is None:
-            end = len(s) - 1
-
-        if end <= start:
+        if start >= len(s) // 2:
             return
 
+        end = -(start + 1)
         s[start], s[end] = s[end], s[start]
-        self.reverse_string_recursive(s, start + 1, end - 1)
+        self.reverse_string_recursive(s, start + 1)
 
 
 if __name__ == "__main__":
