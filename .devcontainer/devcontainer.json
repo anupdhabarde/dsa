@@ -20,6 +20,8 @@
 		"ms-python.black-formatter",
 		"oderwat.indent-rainbow",
 		"DavidAnson.vscode-markdownlint",
-		"shd101wyy.markdown-preview-enhanced"
+		"shd101wyy.markdown-preview-enhanced",
+		"SonarSource.sonarlint-vscode",
+		"eamodio.gitlens"
 	]
 }

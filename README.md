@@ -27,21 +27,20 @@ This repository contains my practice code for data structures and algorithms in 
 - [Binary Search](./from_coding_challenge_platforms/binary_search.py)
 - [Two Sum](./from_coding_challenge_platforms/two_sum.py)
 - [Fibonacci Number](./from_coding_challenge_platforms/fibonacci.py)
-...
+- [Reverse String](./from_coding_challenge_platforms/reverse_array.py)
 
 ### HackerRank
 
 - [Problem A](./hackerrank/problemA.py)
 - [Problem B](./hackerrank/problemB.py)
 - [Problem C](./hackerrank/problemC.py)
-...
 
 ### Misc
 
 - [Sum of N](./from_coding_challenge_platforms/sum_of_n.py)
 - [Sorting](./from_coding_challenge_platforms/sort.py)
 - [Palindrome String](./from_coding_challenge_platforms/palindrome_string.py)
-...
+- [All Subsequences](./from_coding_challenge_platforms/all_subsequence.py)
 
 ## Contributing
 
