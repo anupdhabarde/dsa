@@ -28,6 +28,7 @@ This repository contains my practice code for data structures and algorithms in 
 - [Two Sum](./from_coding_challenge_platforms/two_sum.py)
 - [Fibonacci Number](./from_coding_challenge_platforms/fibonacci.py)
 - [Reverse String](./from_coding_challenge_platforms/reverse_array.py)
+- [Power of Two](./from_coding_challenge_platforms/power_of_two.py)
 
 ### HackerRank
 
